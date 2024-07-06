@@ -9,7 +9,7 @@ import 'swiper/css/grid';
 import 'swiper/css/pagination';
 
 // Import required modules
-import { Grid, Pagination } from 'swiper/modules';
+import { Grid, } from 'swiper/modules';
 
 interface Product {
     image: string;
@@ -83,7 +83,7 @@ const HomeCarouselRight: React.FC = () => {
                 pagination={{
                     clickable: true,
                 }}
-                modules={[Grid, Pagination]}
+                modules={[Grid]}
                 className="w-full h-full"
             >
                 {products.map((product, index) => (
