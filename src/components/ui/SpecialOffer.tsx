@@ -9,7 +9,7 @@ export default function SpecialOffer() {
                 <div className='w-full'>
                     <HomeCarousel
                         showTitle={true}
-                        className="w-[320px] "
+                        className="w-full lg:w-[320px] "
                         titleClassName="text-lg font-bold text-center "
                         desClassName="text-sm py-2"
                         slideClassName="custom-slide w-full"

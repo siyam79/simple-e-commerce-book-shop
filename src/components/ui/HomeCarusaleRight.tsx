@@ -73,7 +73,7 @@ const HomeCarouselRight: React.FC = () => {
     ];
 
     return (
-        <div className="lg:w-[500px] w-[300px] h-[330px] lg:mt-0 md:mt-0 mt-4 flex items-center  justify-center">
+        <div className="lg:w-[500px] w-full h-[330px] lg:mt-0 md:mt-0 mt-4 flex items-center  justify-center">
             <Swiper
                 slidesPerView={1}
                 grid={{
