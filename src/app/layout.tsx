@@ -1,8 +1,12 @@
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import Header from "@/components/ui/Header";
+import ReduxProvider from "@/components/clientComponents/ReduxProvider";
+import { Toaster } from 'react-hot-toast';
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +23,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        
+        {/* redux provider */}
+        <ReduxProvider >
           <div className="max-w-7xl mx-auto px-1 py-2 ">
             <Header />
           </div>
@@ -27,8 +32,9 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-1 py-2 ">
             {children}
           </div>
-        
+        </ReduxProvider>
+        <Toaster />
       </body>
-    </html>
+    </html >
   );
 }

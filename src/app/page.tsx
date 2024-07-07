@@ -1,3 +1,5 @@
+"use client"
+
 import FeaturesItem from "@/components/ui/FeaturesItem";
 import HomeCarousel from "@/components/ui/HomeCarusale";
 import HomeCarusaleRight from "@/components/ui/HomeCarusaleRight";
@@ -22,6 +24,8 @@ export default function Home() {
       <Products />
 
       <SpecialOffer />
+
+      
     </main>
   );
 }

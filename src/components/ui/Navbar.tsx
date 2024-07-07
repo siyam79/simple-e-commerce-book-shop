@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import CategoryDropDown from './CategoryDropDown';
 
+
 interface NavItem {
     name: string;
     path: string;
@@ -42,6 +43,7 @@ export default function Navbar() {
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
+
 
     return (
         <div className={`bg-[#62AB00] ${isScrolled ? 'fixed top-0 left-0 w-full shadow-lg z-50' : ''}`}>

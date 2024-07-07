@@ -2,16 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import ProductList from './ProductList';
 import { MdArrowDropDown } from "react-icons/md";
+import { ProductData } from '@/type/type';
 
-interface Product {
-    id: number;
-    title: string;
-    brand: string;
-    category: string;
-    description: string;
-    image: string;
-    price: number;
-}
 
 const categoryName = [
     { id: "All", label: "All" },
@@ -21,7 +13,7 @@ const categoryName = [
 ];
 
 export default function Products() {
-    const [products, setProducts] = useState<Product[]>([]);
+    const [products, setProducts] = useState<ProductData[]>([]);
     const [activeProduct, setActiveProduct] = useState<string>('All');
     const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
 
@@ -36,7 +28,7 @@ export default function Products() {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                const data: Product[] = await response.json();
+                const data: ProductData[] = await response.json();
                 setProducts(data);
             } catch (error) {
                 console.error('Failed to fetch products:', error);
@@ -82,9 +74,9 @@ export default function Products() {
 
             {/* Tabs for larger devices */}
             <div className="hidden lg:flex space-x-1 my-6 border-2 border-gray-300 w-1/2 mx-auto justify-center">
-                {categoryName.map((category) => (
+                {categoryName.map((category , i) => (
                     <div
-                        key={category.id}
+                        key={i}
                         onClick={() => setActiveProduct(category.id)}
                         className={`${activeProduct === category.id ? "" : "hover:text-[#91C96F]"}
                         relative rounded-full px-10 py-2 text-base font-medium flex items-center justify-center transition focus-visible:outline-2`}
@@ -101,8 +93,8 @@ export default function Products() {
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4'>
-                {filteredProducts.map(product => (
-                    <ProductList key={product.id} product={product} />
+                {filteredProducts.map((product , i) => (
+                    <ProductList key={i} product={product} />
                 ))}
             </div>
         </div>

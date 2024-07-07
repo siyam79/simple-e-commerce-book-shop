@@ -1,4 +1,4 @@
- export interface productData {
+ export interface ProductData {
     title : string
     brand : string
     category : string
